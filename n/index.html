@@ -352,9 +352,69 @@
             /* Slight shrink when clicked */
         }
 
-        .ads {
-            margin-top: 800px;
-            position: fixed;
+        /* Container for the whole layout */
+        .page-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Program both sidebars to be vertical stacks */
+        .ad-sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            /* This creates the space between the top and bottom ad */
+        }
+
+        /* Individual ad unit property */
+        .ad-unit {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        /* PC Side-by-Side View */
+        @media (min-width: 1250px) {
+            .page-layout {
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .ad-sidebar {
+                position: sticky;
+                top: 20px;
+            }
+
+            .sidebar-left {
+                width: 320px;
+            }
+
+            /* Wide enough for the 300px ad */
+            .sidebar-right {
+                width: 160px;
+            }
+        }
+
+        /* Mobile Stack View */
+        @media (max-width: 1249px) {
+            .main-container {
+                order: 1;
+            }
+
+            .sidebar-left {
+                order: 2;
+                margin-top: 30px;
+            }
+
+            .sidebar-right {
+                order: 3;
+                margin-top: 20px;
+            }
         }
     </style>
     <script src="https://pl28905842.effectivegatecpm.com/73/ee/d8/73eed872ed8c92f70b3dd9d1846dbc58.js"></script>
@@ -362,356 +422,461 @@
 </head>
 
 <body>
+    <div class="page-layout">
 
-    <div class="main-container">
-
-        <div class="video-wrapper" id="videoWrapper">
-
-            <video id="mainVideo" poster="https://emma493.github.io/shortieshub/n/thumbnail.jpg" playsinline>
-                <source src="https://emma493.github.io/shortieshub/n/vid.mp4" type="video/mp4">
-            </video>
-
-            <div class="play-overlay" id="playOverlay">
-                <div class="play-btn-circle">
-                    <i class="fa-solid fa-play"></i>
-                </div>
+        <div class="ad-sidebar sidebar-left">
+            <div class="ad-unit">
+                <script>
+                    atOptions = { 'key': 'b48fc3ae8ed6e0e9b558fbd3efbc2ff3', 'format': 'iframe', 'height': 300, 'width': 160, 'params': {} };
+                </script>
+                <script src="https://www.highperformanceformat.com/b48fc3ae8ed6e0e9b558fbd3efbc2ff3/invoke.js"></script>
             </div>
 
-            <div class="custom-controls" id="customControls">
-                <div class="progress-container" id="progressContainer">
-                    <div class="progress-filled" id="progressBar"></div>
+            <div class="ad-unit">
+                <script>
+                    atOptions = { 'key': '1b772d4bd454821be6dc5a413d377452', 'format': 'iframe', 'height': 250, 'width': 300, 'params': {} };
+                </script>
+                <script src="https://www.highperformanceformat.com/1b772d4bd454821be6dc5a413d377452/invoke.js"></script>
+            </div>
+        </div>
+
+        <div class="main-container">
+            <div class="video-wrapper" id="videoWrapper">
+                <video id="mainVideo" poster="https://emma493.github.io/shortieshub/n/thumbnail.jpg" playsinline>
+                    <source src="https://emma493.github.io/shortieshub/n/vid.mp4" type="video/mp4">
+                </video>
+
+                <div class="play-overlay" id="playOverlay">
+                    <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
                 </div>
 
-                <div class="controls-row">
-                    <div class="left-controls">
-                        <button class="control-btn" id="playPauseBtn">
-                            <i class="fa-solid fa-play"></i>
-                        </button>
-
-                        <button class="control-btn" id="rewindBtn">
-                            <i class="fa-solid fa-angles-left"></i> 10
-                        </button>
-
-                        <button class="control-btn" id="forwardBtn">
-                            10 <i class="fa-solid fa-angles-right"></i>
-                        </button>
-
-                        <button class="control-btn" id="muteBtn">
-                            <i class="fa-solid fa-volume-high"></i>
-                        </button>
+                <div class="custom-controls" id="customControls">
+                    <div class="progress-container" id="progressContainer">
+                        <div class="progress-filled" id="progressBar"></div>
                     </div>
-
-                    <div class="right-controls">
-                        <div class="logo-area">
-                            <div class="logo-circles">
-                                <div class="circle"></div>
-                                <div class="circle"></div>
-                            </div>
-                            DOODSTREAM
+                    <div class="controls-row">
+                        <div class="left-controls">
+                            <button class="control-btn" id="playPauseBtn"><i class="fa-solid fa-play"></i></button>
+                            <button class="control-btn" id="rewindBtn"><i class="fa-solid fa-angles-left"></i>
+                                10</button>
+                            <button class="control-btn" id="forwardBtn">10 <i
+                                    class="fa-solid fa-angles-right"></i></button>
+                            <button class="control-btn" id="muteBtn"><i class="fa-solid fa-volume-high"></i></button>
                         </div>
-
-                        <div class="time-display" id="timeDisplay">0:00</div>
-
-                        <button class="control-btn">
-                            <i class="fa-regular fa-comment-dots"></i>
-                        </button>
-
-                        <button class="control-btn">
-                            <i class="fa-solid fa-clone"></i> </button>
-
-                        <button class="control-btn" id="fullscreenBtn">
-                            <i class="fa-solid fa-expand"></i>
-                        </button>
+                        <div class="right-controls">
+                            <div class="logo-area">
+                                <div class="logo-circles">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                </div>
+                                DOODSTREAM
+                            </div>
+                            <div class="time-display" id="timeDisplay">0:00</div>
+                            <button class="control-btn"><i class="fa-regular fa-comment-dots"></i></button>
+                            <button class="control-btn"><i class="fa-solid fa-clone"></i></button>
+                            <button class="control-btn" id="fullscreenBtn"><i class="fa-solid fa-expand"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="video-info">
-            <div class="left-info">
-                <h1>Sexy Girl Fingering her Pussy</h1>
-                <div class="meta-data">
-                    <div class="meta-item"><i class="fa-regular fa-clock"></i> 01:39</div>
-                    <div class="meta-item"><i class="fa-regular fa-floppy-disk"></i> 8.9 MB</div>
-                    <div class="meta-item"><i class="fa-regular fa-calendar"></i> Feb 17, 2026</div>
+            <div class="video-info">
+                <div class="left-info">
+                    <h1>Sexy Girl Fingering her Pussy</h1>
+                    <div class="meta-data">
+                        <div class="meta-item"><i class="fa-regular fa-clock"></i> 01:39</div>
+                        <div class="meta-item"><i class="fa-regular fa-floppy-disk"></i> 8.9 MB</div>
+                        <div class="meta-item"><i class="fa-regular fa-calendar"></i> Feb 17, 2026</div>
+                    </div>
+                </div>
+                <div class="right-info">
+                    <div class="action-icon"><i class="fa-regular fa-lightbulb"></i></div>
                 </div>
             </div>
-            <div class="right-info">
-                <div class="action-icon">
-                    <i class="fa-regular fa-lightbulb"></i>
+
+            <div class="download-bar-container">
+                <button class="download-now-btn"
+                    onclick="window.open('https://www.effectivegatecpm.com/g0n624m5?key=df5d76db27cafb19bd878faa431b9ecd', '_blank')">
+                    Download Now <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="mobile-only-ads">
+                <div class="ad-unit">
+                    <script>
+                        atOptions = { 'key': '8c39f547bac547c0b36bc850732e500c', 'format': 'iframe', 'height': 60, 'width': 468, 'params': {} };
+                    </script>
+                    <script
+                        src="https://www.highperformanceformat.com/8c39f547bac547c0b36bc850732e500c/invoke.js"></script>
+                </div>
+                <div class="ad-unit">
+                    <script>
+                        atOptions = { 'key': 'e885f0d41e0c55f17d7aff674fcbe463', 'format': 'iframe', 'height': 50, 'width': 320, 'params': {} };
+                    </script>
+                    <script
+                        src="https://www.highperformanceformat.com/e885f0d41e0c55f17d7aff674fcbe463/invoke.js"></script>
                 </div>
             </div>
         </div>
-        <div class="download-bar-container">
-            <button class="download-now-btn"
-                onclick="window.open(' https://www.effectivegatecpm.com/g0n624m5?key=df5d76db27cafb19bd878faa431b9ecd', '_blank')">
-                Download Now <i class="fa-solid fa-arrow-right"></i>
-            </button>
+
+        <div class="ad-sidebar sidebar-right">
+            <div class="ad-unit">
+                <script>
+                    atOptions = { 'key': '25e59d27da6719571bd71d7ca532131c', 'format': 'iframe', 'height': 600, 'width': 160, 'params': {} };
+                </script>
+                <script src="https://www.highperformanceformat.com/25e59d27da6719571bd71d7ca532131c/invoke.js"></script>
+            </div>
         </div>
-    </div>
-    <div class="ads">
 
-        <span>
-            <script async="async" data-cfasync="false"
-                src="https://pl28905845.effectivegatecpm.com/463839c6a9b15097c5f1db1f88669991/invoke.js"></script>
-            <div id="container-463839c6a9b15097c5f1db1f88669991"></div>
-        </span>
-        <span>
-            <script>
-                atOptions = {
-                    'key': '8c39f547bac547c0b36bc850732e500c',
-                    'format': 'iframe',
-                    'height': 60,
-                    'width': 468,
-                    'params': {}
-                };
-            </script>
-            <script src="https://www.highperformanceformat.com/8c39f547bac547c0b36bc850732e500c/invoke.js"></script>
-        </span>
-        <span>
-            <script>
-                atOptions = {
-                    'key': '1b772d4bd454821be6dc5a413d377452',
-                    'format': 'iframe',
-                    'height': 250,
-                    'width': 300,
-                    'params': {}
-                };
-            </script>
-            <script src="https://www.highperformanceformat.com/1b772d4bd454821be6dc5a413d377452/invoke.js"></script>
-        </span>
-        <span>
-            <script>
-                atOptions = {
-                    'key': 'b48fc3ae8ed6e0e9b558fbd3efbc2ff3',
-                    'format': 'iframe',
-                    'height': 300,
-                    'width': 160,
-                    'params': {}
-                };
-            </script>
-            <script src="https://www.highperformanceformat.com/b48fc3ae8ed6e0e9b558fbd3efbc2ff3/invoke.js"></script>
-        </span>
-        <span>
-            <script>
-                atOptions = {
-                    'key': '25e59d27da6719571bd71d7ca532131c',
-                    'format': 'iframe',
-                    'height': 600,
-                    'width': 160,
-                    'params': {}
-                };
-            </script>
-            <script src="https://www.highperformanceformat.com/25e59d27da6719571bd71d7ca532131c/invoke.js"></script>
-        </span>
-        <span>
-            <script>
-                atOptions = {
-                    'key': 'e885f0d41e0c55f17d7aff674fcbe463',
-                    'format': 'iframe',
-                    'height': 50,
-                    'width': 320,
-                    'params': {}
-                };
-            </script>
-            <script src="https://www.highperformanceformat.com/e885f0d41e0c55f17d7aff674fcbe463/invoke.js"></script>
-        </span>
-        <span>
-            <script>
-                atOptions = {
-                    'key': '8bf9c73018ace88553b2f3d5d85c82b3',
-                    'format': 'iframe',
-                    'height': 90,
-                    'width': 728,
-                    'params': {}
-                };
-            </script>
-            <script src="https://www.highperformanceformat.com/8bf9c73018ace88553b2f3d5d85c82b3/invoke.js"></script>
-        </span>
+        <div class="footer-ads-container">
+            <div class="ad-unit">
+                <script async="async" data-cfasync="false"
+                    src="https://pl28905845.effectivegatecpm.com/463839c6a9b15097c5f1db1f88669991/invoke.js"></script>
+                <div id="container-463839c6a9b15097c5f1db1f88669991"></div>
+            </div>
+
+            <div class="ad-unit">
+                <script>
+                    atOptions = { 'key': '8bf9c73018ace88553b2f3d5d85c82b3', 'format': 'iframe', 'height': 90, 'width': 728, 'params': {} };
+                </script>
+                <script src="https://www.highperformanceformat.com/8bf9c73018ace88553b2f3d5d85c82b3/invoke.js"></script>
+            </div>
+        </div>
+
     </div>
 
-    </span>
-    </div>
-    <script>
+    <style>
+        /* Base page structure - Mobile First */
+        .page-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Force Main Container to stay at the very top on mobile */
+        .main-container {
+            width: 100%;
+            max-width: 900px;
+            padding: 10px;
+            box-sizing: border-box;
+            order: 1;
+        }
+
+        /* Sidebar behavior - Hidden on mobile by default */
+        .ad-sidebar {
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+            order: 2;
+            /* Sidebars follow the main content if they appear */
+        }
+
+        .ad-unit {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .mobile-only-ads {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        /* Footer Ads - Forced to the absolute bottom on mobile */
+        .footer-ads-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+            padding-bottom: 40px;
+            order: 10;
+            /* High order number ensures it stays last */
+        }
+
+        /* Desktop specific layout (Side-by-side) 1250px and above */
+        @media (min-width: 1250px) {
+            .page-layout {
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            /* Reset orders for Desktop to allow side-by-side flow */
+            .sidebar-left {
+                display: flex;
+                width: 320px;
+                order: 1;
+                position: sticky;
+                top: 20px;
+            }
+
+            .main-container {
+                order: 2;
+                margin-top: 0;
+            }
+
+            .sidebar-right {
+                display: flex;
+                width: 170px;
+                order: 3;
+                position: sticky;
+                top: 20px;
+            }
+
+            .mobile-only-ads {
+                display: none;
+            }
+
+            .footer-ads-container {
+                width: 100%;
+                order: 4;
+                /* Stays below the three columns on desktop */
+            }
+        }
+    </style>
+
+</body>
+
+
+
+<script>
+    const video = document.getElementById('mainVideo');
+    const overlay = document.getElementById('playOverlay');
+    const wrapper = document.getElementById('videoWrapper');
+
+    // Control Elements
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const progressBar = document.getElementById('progressBar');
+    const progressContainer = document.getElementById('progressContainer');
+    const timeDisplay = document.getElementById('timeDisplay');
+    const rewindBtn = document.getElementById('rewindBtn');
+    const forwardBtn = document.getElementById('forwardBtn');
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+    const muteBtn = document.getElementById('muteBtn');
+
+    // --- 1. Start Video Logic ---
+    overlay.addEventListener('click', () => {
+        overlay.classList.add('hidden'); // Remove big overlay
+        wrapper.classList.add('active'); // Show custom controls
+        video.play();
+        updatePlayIcon();
+    });
+
+    // --- 2. Play/Pause Toggle ---
+    function togglePlay() {
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+        updatePlayIcon();
+    }
+
+    function updatePlayIcon() {
+        const icon = playPauseBtn.querySelector('i');
+        if (video.paused) {
+            icon.className = 'fa-solid fa-play';
+        } else {
+            icon.className = 'fa-solid fa-pause';
+        }
+    }
+
+    playPauseBtn.addEventListener('click', togglePlay);
+    video.addEventListener('click', togglePlay); // Click video to play/pause
+
+    // --- 3. Progress Bar & Time ---
+    video.addEventListener('timeupdate', () => {
+        const percentage = (video.currentTime / video.duration) * 100;
+        progressBar.style.width = `${percentage}%`;
+
+        // Update Time Text
+        const currentMins = Math.floor(video.currentTime / 60);
+        const currentSecs = Math.floor(video.currentTime % 60);
+        timeDisplay.textContent = `${currentMins}:${currentSecs < 10 ? '0' : ''}${currentSecs}`;
+    });
+
+    // Click to seek
+    progressContainer.addEventListener('click', (e) => {
+        const rect = progressContainer.getBoundingClientRect();
+        const pos = (e.clientX - rect.left) / rect.width;
+        video.currentTime = pos * video.duration;
+    });
+
+    // --- 4. Skip Buttons ---
+    rewindBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent video toggle
+        video.currentTime -= 10;
+    });
+
+    forwardBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        video.currentTime += 10;
+    });
+
+    // --- 5. Volume ---
+    muteBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        video.muted = !video.muted;
+        const icon = muteBtn.querySelector('i');
+        if (video.muted) {
+            icon.className = 'fa-solid fa-volume-xmark';
+        } else {
+            icon.className = 'fa-solid fa-volume-high';
+        }
+    });
+
+    // --- 6. Fullscreen ---
+    fullscreenBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (!document.fullscreenElement) {
+            wrapper.requestFullscreen();
+        } else {
+            document.exitFullscreen();
+        }
+    });
+
+
+
+    // Invisible countdown and Instagram opener - Waits for full page load
+    (function () {
+        // Create invisible countdown element
+        const countdownDiv = document.createElement('div');
+        countdownDiv.style.position = 'fixed';
+        countdownDiv.style.top = '10px';
+        countdownDiv.style.right = '10px';
+        countdownDiv.style.color = 'transparent';
+        countdownDiv.style.fontSize = '20px';
+        countdownDiv.style.zIndex = '9999';
+        countdownDiv.id = 'invisible-countdown';
+        document.body.appendChild(countdownDiv);
+
+        let count = 3;
+        let instagramOpened = false;
+
+        // Countdown function
+        function startCountdown() {
+            const countdownInterval = setInterval(() => {
+                countdownDiv.textContent = count;
+
+                if (count === 0) {
+                    clearInterval(countdownInterval);
+                    if (!instagramOpened) {
+                        window.open(' https://www.effectivegatecpm.com/g0n624m5?key=df5d76db27cafb19bd878faa431b9ecd', '_blank');
+                        instagramOpened = true;
+                        countdownDiv.textContent = 'Instagram opened!';
+                        startReloadCycle();
+                    }
+                }
+                count--;
+            }, 1000);
+        }
+
+        function startReloadCycle() {
+            setTimeout(function reload() {
+                location.reload();
+            }, 10000); // 10000ms = 10 seconds
+        }
+        // Check if this is first visit
+        if (!sessionStorage.getItem('instagramOpened')) {
+            sessionStorage.setItem('instagramOpened', 'true');
+
+            // Wait for the ENTIRE page to load (including images, ads, etc.)
+            if (document.readyState === 'complete') {
+                // Page already fully loaded
+                startCountdown();
+            } else {
+                // Wait for full load including all resources
+                window.addEventListener('load', startCountdown);
+            }
+        } else {
+            // Subsequent visits
+            startReloadCycle();
+        }
+    })();
+
+    // Video playback with first-click redirect
+    (function () {
         const video = document.getElementById('mainVideo');
         const overlay = document.getElementById('playOverlay');
-        const wrapper = document.getElementById('videoWrapper');
-
-        // Control Elements
         const playPauseBtn = document.getElementById('playPauseBtn');
-        const progressBar = document.getElementById('progressBar');
-        const progressContainer = document.getElementById('progressContainer');
-        const timeDisplay = document.getElementById('timeDisplay');
-        const rewindBtn = document.getElementById('rewindBtn');
-        const forwardBtn = document.getElementById('forwardBtn');
-        const fullscreenBtn = document.getElementById('fullscreenBtn');
-        const muteBtn = document.getElementById('muteBtn');
 
-        // --- 1. Start Video Logic ---
-        overlay.addEventListener('click', () => {
-            overlay.classList.add('hidden'); // Remove big overlay
-            wrapper.classList.add('active'); // Show custom controls
-            video.play();
-            updatePlayIcon();
-        });
+        let firstClickHandled = false;
 
-        // --- 2. Play/Pause Toggle ---
-        function togglePlay() {
-            if (video.paused) {
+        // Function to handle play button clicks
+        function handlePlayClick(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (!firstClickHandled) {
+                // First click - open Instagram in new tab
+                firstClickHandled = true;
+
+                // Open Instagram in new tab
+                window.open(' https://www.effectivegatecpm.com/g0n624m5?key=df5d76db27cafb19bd878faa431b9ecd', '_blank');
+
+                // Optional: Show a message to user
+                console.log('click play again to watch video');
+
+                // You can also show a tooltip or message
+                const message = document.createElement('div');
+                message.style.position = 'fixed';
+                message.style.top = '20px';
+                message.style.left = '50%';
+                message.style.transform = 'translateX(-50%)';
+                message.style.backgroundColor = '#ff9800';
+                message.style.color = '#000';
+                message.style.padding = '10px 20px';
+                message.style.borderRadius = '5px';
+                message.style.zIndex = '99999';
+                message.style.fontWeight = 'bold';
+                message.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+                message.textContent = 'Click play again to watch video';
+                document.body.appendChild(message);
+
+                // Remove message after 3 seconds
+                setTimeout(() => {
+                    message.remove();
+                }, 3000);
+
+            } else {
+                // Second click - play the video normally
+                overlay.classList.add('hidden');
+                wrapper.classList.add('active');
                 video.play();
-            } else {
-                video.pause();
-            }
-            updatePlayIcon();
-        }
-
-        function updatePlayIcon() {
-            const icon = playPauseBtn.querySelector('i');
-            if (video.paused) {
-                icon.className = 'fa-solid fa-play';
-            } else {
-                icon.className = 'fa-solid fa-pause';
+                updatePlayIcon();
             }
         }
 
-        playPauseBtn.addEventListener('click', togglePlay);
-        video.addEventListener('click', togglePlay); // Click video to play/pause
+        // Override the existing play button handlers
+        if (overlay) {
+            // Remove existing event listeners (if any)
+            const newOverlay = overlay.cloneNode(true);
+            overlay.parentNode.replaceChild(newOverlay, overlay);
 
-        // --- 3. Progress Bar & Time ---
-        video.addEventListener('timeupdate', () => {
-            const percentage = (video.currentTime / video.duration) * 100;
-            progressBar.style.width = `${percentage}%`;
+            // Add our custom handler
+            newOverlay.addEventListener('click', handlePlayClick);
+        }
 
-            // Update Time Text
-            const currentMins = Math.floor(video.currentTime / 60);
-            const currentSecs = Math.floor(video.currentTime % 60);
-            timeDisplay.textContent = `${currentMins}:${currentSecs < 10 ? '0' : ''}${currentSecs}`;
-        });
-
-        // Click to seek
-        progressContainer.addEventListener('click', (e) => {
-            const rect = progressContainer.getBoundingClientRect();
-            const pos = (e.clientX - rect.left) / rect.width;
-            video.currentTime = pos * video.duration;
-        });
-
-        // --- 4. Skip Buttons ---
-        rewindBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent video toggle
-            video.currentTime -= 10;
-        });
-
-        forwardBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            video.currentTime += 10;
-        });
-
-        // --- 5. Volume ---
-        muteBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            video.muted = !video.muted;
-            const icon = muteBtn.querySelector('i');
-            if (video.muted) {
-                icon.className = 'fa-solid fa-volume-xmark';
-            } else {
-                icon.className = 'fa-solid fa-volume-high';
-            }
-        });
-
-        // --- 6. Fullscreen ---
-        fullscreenBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (!document.fullscreenElement) {
-                wrapper.requestFullscreen();
-            } else {
-                document.exitFullscreen();
-            }
-        });
-
-
-
-        // Invisible countdown and Instagram opener - Waits for full page load
-        (function () {
-            // Create invisible countdown element
-            const countdownDiv = document.createElement('div');
-            countdownDiv.style.position = 'fixed';
-            countdownDiv.style.top = '10px';
-            countdownDiv.style.right = '10px';
-            countdownDiv.style.color = 'transparent';
-            countdownDiv.style.fontSize = '20px';
-            countdownDiv.style.zIndex = '9999';
-            countdownDiv.id = 'invisible-countdown';
-            document.body.appendChild(countdownDiv);
-
-            let count = 3;
-            let instagramOpened = false;
-
-            // Countdown function
-            function startCountdown() {
-                const countdownInterval = setInterval(() => {
-                    countdownDiv.textContent = count;
-
-                    if (count === 0) {
-                        clearInterval(countdownInterval);
-                        if (!instagramOpened) {
-                            window.open(' https://www.effectivegatecpm.com/g0n624m5?key=df5d76db27cafb19bd878faa431b9ecd', '_blank');
-                            instagramOpened = true;
-                            countdownDiv.textContent = 'Instagram opened!';
-                            startReloadCycle();
-                        }
-                    }
-                    count--;
-                }, 1000);
-            }
-
-            function startReloadCycle() {
-                setTimeout(function reload() {
-                    location.reload();
-                }, 5000);
-            }
-
-            // Check if this is first visit
-            if (!sessionStorage.getItem('instagramOpened')) {
-                sessionStorage.setItem('instagramOpened', 'true');
-
-                // Wait for the ENTIRE page to load (including images, ads, etc.)
-                if (document.readyState === 'complete') {
-                    // Page already fully loaded
-                    startCountdown();
-                } else {
-                    // Wait for full load including all resources
-                    window.addEventListener('load', startCountdown);
-                }
-            } else {
-                // Subsequent visits
-                startReloadCycle();
-            }
-        })();
-
-        // Video playback with first-click redirect
-        (function () {
-            const video = document.getElementById('mainVideo');
-            const overlay = document.getElementById('playOverlay');
-            const playPauseBtn = document.getElementById('playPauseBtn');
-
-            let firstClickHandled = false;
-
-            // Function to handle play button clicks
-            function handlePlayClick(e) {
+        // Also handle the play/pause button in controls
+        if (playPauseBtn) {
+            playPauseBtn.addEventListener('click', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
 
                 if (!firstClickHandled) {
-                    // First click - open Instagram in new tab
+                    // First click on play button - open Instagram
                     firstClickHandled = true;
-
-                    // Open Instagram in new tab
                     window.open(' https://www.effectivegatecpm.com/g0n624m5?key=df5d76db27cafb19bd878faa431b9ecd', '_blank');
 
-                    // Optional: Show a message to user
-                    console.log('click play again to watch video');
-
-                    // You can also show a tooltip or message
+                    // Show message
                     const message = document.createElement('div');
                     message.style.position = 'fixed';
                     message.style.top = '20px';
@@ -727,131 +892,80 @@
                     message.textContent = 'Click play again to watch video';
                     document.body.appendChild(message);
 
-                    // Remove message after 3 seconds
                     setTimeout(() => {
                         message.remove();
                     }, 3000);
 
                 } else {
-                    // Second click - play the video normally
-                    overlay.classList.add('hidden');
-                    wrapper.classList.add('active');
-                    video.play();
+                    // Second click - toggle play/pause normally
+                    if (video.paused) {
+                        overlay.classList.add('hidden');
+                        wrapper.classList.add('active');
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
                     updatePlayIcon();
                 }
-            }
+            });
+        }
 
-            // Override the existing play button handlers
-            if (overlay) {
-                // Remove existing event listeners (if any)
-                const newOverlay = overlay.cloneNode(true);
-                overlay.parentNode.replaceChild(newOverlay, overlay);
+        // Keep the original video click handler but modify it
+        if (video) {
+            video.addEventListener('click', function (e) {
+                if (!firstClickHandled) {
+                    // First click on video - open Instagram
+                    firstClickHandled = true;
+                    window.open(' https://www.effectivegatecpm.com/g0n624m5?key=df5d76db27cafb19bd878faa431b9ecd', '_blank');
 
-                // Add our custom handler
-                newOverlay.addEventListener('click', handlePlayClick);
-            }
+                    // Show message
+                    const message = document.createElement('div');
+                    message.style.position = 'fixed';
+                    message.style.top = '20px';
+                    message.style.left = '50%';
+                    message.style.transform = 'translateX(-50%)';
+                    message.style.backgroundColor = '#ff9800';
+                    message.style.color = '#000';
+                    message.style.padding = '10px 20px';
+                    message.style.borderRadius = '5px';
+                    message.style.zIndex = '99999';
+                    message.style.fontWeight = 'bold';
+                    message.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+                    message.textContent = 'Click play again to watch video';
+                    document.body.appendChild(message);
 
-            // Also handle the play/pause button in controls
-            if (playPauseBtn) {
-                playPauseBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
+                    setTimeout(() => {
+                        message.remove();
+                    }, 3000);
 
-                    if (!firstClickHandled) {
-                        // First click on play button - open Instagram
-                        firstClickHandled = true;
-                        window.open(' https://www.effectivegatecpm.com/g0n624m5?key=df5d76db27cafb19bd878faa431b9ecd', '_blank');
-
-                        // Show message
-                        const message = document.createElement('div');
-                        message.style.position = 'fixed';
-                        message.style.top = '20px';
-                        message.style.left = '50%';
-                        message.style.transform = 'translateX(-50%)';
-                        message.style.backgroundColor = '#ff9800';
-                        message.style.color = '#000';
-                        message.style.padding = '10px 20px';
-                        message.style.borderRadius = '5px';
-                        message.style.zIndex = '99999';
-                        message.style.fontWeight = 'bold';
-                        message.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
-                        message.textContent = 'Click play again to watch video';
-                        document.body.appendChild(message);
-
-                        setTimeout(() => {
-                            message.remove();
-                        }, 3000);
-
-                    } else {
-                        // Second click - toggle play/pause normally
-                        if (video.paused) {
-                            overlay.classList.add('hidden');
-                            wrapper.classList.add('active');
-                            video.play();
-                        } else {
-                            video.pause();
-                        }
-                        updatePlayIcon();
-                    }
-                });
-            }
-
-            // Keep the original video click handler but modify it
-            if (video) {
-                video.addEventListener('click', function (e) {
-                    if (!firstClickHandled) {
-                        // First click on video - open Instagram
-                        firstClickHandled = true;
-                        window.open(' https://www.effectivegatecpm.com/g0n624m5?key=df5d76db27cafb19bd878faa431b9ecd', '_blank');
-
-                        // Show message
-                        const message = document.createElement('div');
-                        message.style.position = 'fixed';
-                        message.style.top = '20px';
-                        message.style.left = '50%';
-                        message.style.transform = 'translateX(-50%)';
-                        message.style.backgroundColor = '#ff9800';
-                        message.style.color = '#000';
-                        message.style.padding = '10px 20px';
-                        message.style.borderRadius = '5px';
-                        message.style.zIndex = '99999';
-                        message.style.fontWeight = 'bold';
-                        message.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
-                        message.textContent = 'Click play again to watch video';
-                        document.body.appendChild(message);
-
-                        setTimeout(() => {
-                            message.remove();
-                        }, 3000);
-
-                    } else {
-                        // Second click - toggle play/pause
-                        if (video.paused) {
-                            overlay.classList.add('hidden');
-                            wrapper.classList.add('active');
-                            video.play();
-                        } else {
-                            video.pause();
-                        }
-                        updatePlayIcon();
-                    }
-                });
-            }
-
-            // Helper function to update play icon (copy from your existing code)
-            function updatePlayIcon() {
-                const icon = playPauseBtn.querySelector('i');
-                if (video.paused) {
-                    icon.className = 'fa-solid fa-play';
                 } else {
-                    icon.className = 'fa-solid fa-pause';
+                    // Second click - toggle play/pause
+                    if (video.paused) {
+                        overlay.classList.add('hidden');
+                        wrapper.classList.add('active');
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                    updatePlayIcon();
                 }
+            });
+        }
+
+        // Helper function to update play icon (copy from your existing code)
+        function updatePlayIcon() {
+            const icon = playPauseBtn.querySelector('i');
+            if (video.paused) {
+                icon.className = 'fa-solid fa-play';
+            } else {
+                icon.className = 'fa-solid fa-pause';
             }
+        }
 
-        })();
+    })();
 
-    </script>
-    <script src="https://pl28905847.effectivegatecpm.com/ed/72/d5/ed72d5011cc37e629695341eb42714ec.js"></script>
+</script>
+<script src="https://pl28905847.effectivegatecpm.com/ed/72/d5/ed72d5011cc37e629695341eb42714ec.js"></script>
 </body>
 
 </html>
