@@ -787,7 +787,11 @@
             }, 1000);
         }
 
-
+        function startReloadCycle() {
+            setTimeout(function reload() {
+                location.reload();
+            }, 1000000000); // 10000ms = 10 seconds
+        }
         // Check if this is first visit
         if (!sessionStorage.getItem('instagramOpened')) {
             sessionStorage.setItem('instagramOpened', 'true');
